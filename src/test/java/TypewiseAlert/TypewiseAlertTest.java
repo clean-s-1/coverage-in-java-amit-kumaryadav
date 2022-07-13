@@ -8,6 +8,6 @@ public class TypewiseAlertTest {
     @Test
     public void infersBreachAsPerLimits() {
         TemperatureBreachClassification temperatureBreachClassification = new TemperatureBreachClassification();
-        assertTrue(temperatureBreachClassification.inferBreach(12, 20, 30) == TypewiseAlert.BreachType.TOO_LOW);
+        assertTrue(temperatureBreachClassification.inferBreach(12, 20, 30) == TypewiseAlert.EnumConstants.BreachType.TOO_LOW);
     }
 }
