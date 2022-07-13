@@ -22,6 +22,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Compile code
+      run: javac TypewiseAlert/EnumConstants.java TypewiseAlert/IAlertTarget.java TypewiseAlert/EmailSender.java TypewiseAlert/Controller.java TypewiseAlert/AlertFactory.java TypewiseAlert/TemperatureBreachClassification.java TypewiseAlert/TypewiseAlert.java
     - name: Build and Generate coverage
       run: mvn test jacoco:report
     - name: Upload coverage
