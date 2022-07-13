@@ -7,11 +7,12 @@ import java.util.Map;
 
 import static TypewiseAlert.EnumConstants.CoolingType.*;
 
+
 public class TemperatureBreachClassification {
     public final int incrementCounter = 5;
-    ArrayList<TypewiseAlert.EnumConstants.CoolingType> coolingTypeConstLimit = new ArrayList<>(Arrays.asList(PASSIVE_COOLING, MED_ACTIVE_COOLING, HI_ACTIVE_COOLING));
+    ArrayList<EnumConstants.CoolingType> coolingTypeConstLimit = new ArrayList<>(Arrays.asList(PASSIVE_COOLING, MED_ACTIVE_COOLING, HI_ACTIVE_COOLING));
 
-    public Map<String, Integer> getLimits(TypewiseAlert.EnumConstants.CoolingType coolingType) {
+    public Map<String, Integer> getLimits(EnumConstants.CoolingType coolingType) {
         Map<String, Integer> result = new HashMap<>();
         int lowerLimit = 0;
         int upperLimit = 35;
@@ -26,13 +27,13 @@ public class TemperatureBreachClassification {
         return result;
     }
 
-    public TypewiseAlert.EnumConstants.BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
+    public EnumConstants.BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
         if (value < lowerLimit) {
-            return TypewiseAlert.EnumConstants.BreachType.TOO_LOW;
+            return EnumConstants.BreachType.TOO_LOW;
         }
         if (value > upperLimit) {
-            return TypewiseAlert.EnumConstants.BreachType.TOO_HIGH;
+            return EnumConstants.BreachType.TOO_HIGH;
         }
-        return TypewiseAlert.EnumConstants.BreachType.NORMAL;
+        return EnumConstants.BreachType.NORMAL;
     }
 }
