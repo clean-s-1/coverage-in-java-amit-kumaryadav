@@ -7,7 +7,7 @@ public class EnumConstants {
 
 
     public enum AlertTarget {
-        TO_CONTROLLER, TO_EMAIL
+        TO_CONTROLLER, TO_EMAIL, DEFAULT
     }
 
 
